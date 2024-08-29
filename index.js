@@ -2,7 +2,6 @@ import fs from 'fs';
 import inquirer from 'inquirer';
 import colors from 'colors';
 
-// Function to generate the README content
 function generateREADME(answers) {
     return `
 # ${answers.Title}
@@ -33,7 +32,6 @@ ${answers.Questions}
 `;
 }
 
-// Inquirer prompts to gather information for the README
 inquirer
     .prompt([
         {
@@ -85,7 +83,6 @@ inquirer
     .then((answers) => {
         const READMEContent = generateREADME(answers);
 
-        // Write the README file
         fs.writeFile('README.md', READMEContent, (err) =>
             err ? console.error(err) : console.log('README.md successfully created!')
         );
