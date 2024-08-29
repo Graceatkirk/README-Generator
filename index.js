@@ -45,7 +45,7 @@ inquirer
             message: 'Provide a description of your project:'
         },
         {
-            type: 'input',
+            type: 'editor',
             name: 'Table of Contents',
             message: 'List the contents of your project:'
         },
