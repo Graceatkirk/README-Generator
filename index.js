@@ -5,28 +5,31 @@ import colors from 'colors';
 // Function to generate the README content
 function generateREADME(answers) {
     return `
-# ${answers.title}
+# ${answers.Title}
 
 ## Description
-${answers.description}
+${answers.Description}
 
 ## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Contributing](#contributing)
-4. [License](#license)
+${answers['Table of Contents']}
 
 ## Installation
-${answers.installation}
+${answers.Installation}
 
 ## Usage
-${answers.usage}
-
-## Contributing
-${answers.contributing}
+${answers.Usage}
 
 ## License
-${answers.license}
+${answers.License}
+
+## Contributing
+${answers.Contributing}
+
+## Tests
+${answers.Tests}
+
+## Questions
+${answers.Questions}
 `;
 }
 
@@ -35,33 +38,48 @@ inquirer
     .prompt([
         {
             type: 'input',
-            name: 'title',
+            name: 'Title',
             message: 'What is the title of your project?'
         },
         {
             type: 'input',
-            name: 'description',
+            name: 'Description',
             message: 'Provide a description of your project:'
         },
         {
             type: 'input',
-            name: 'installation',
+            name: 'Table of Contents',
+            message: 'List the contents of your project:'
+        },
+        {
+            type: 'input',
+            name: 'Installation',
             message: 'How do you install your project?'
         },
         {
             type: 'input',
-            name: 'usage',
+            name: 'Usage',
             message: 'How do you use your project?'
         },
         {
             type: 'input',
-            name: 'contributing',
+            name: 'License',
+            message: 'What license does your project use?'
+        },
+        {
+            type: 'input',
+            name: 'Contributing',
             message: 'How can others contribute to your project?'
         },
         {
             type: 'input',
-            name: 'license',
-            message: 'What license does your project use?'
+            name: 'Tests',
+            message: 'Provide information on how to run tests for your application.'
+        },
+        {
+            type: 'input',
+            name: 'Questions',
+            message: 'Provide contact information for users to send questions to.'
         }
     ])
     .then((answers) => {
